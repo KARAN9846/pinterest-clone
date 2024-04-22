@@ -15,13 +15,8 @@ const userSchema = new Schema({
     required: true
   },
   posts: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Post'
   }],
   
-  dp: {
-    type: String // Assuming dp stands for display picture and it's a URL
-  },
   email: {
     type: String,
     required: true,
@@ -33,6 +28,6 @@ const userSchema = new Schema({
 });
 
 // Create the User model
-const User = mongoose.model('User', userSchema);
+module.exports = mongoose.model('User', userSchema);
 
-module.exports = User;
+
